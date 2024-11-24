@@ -10,7 +10,7 @@
             <div>
                 <span class="footer-title">Kontak</span> 
                 <a class="link link-hover">Telepon: [Nomor Telepon]</a>
-                <a class="link link-hover">Email: [Email Desa]</a>
+                <a class="link link-hover">Email: [Email kelurahan]</a>
                 <a class="link link-hover">Alamat: [Alamat Lengkap]</a>
             </div> 
             <div>
@@ -28,6 +28,6 @@
     <!-- Copyright -->
     <footer class="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
-            <p>© 2024 Desa Kayawu - Hak Cipta Dilindungi</p>
+            <p>© 2024 Kelurahan Kayawu - Hak Cipta Dilindungi</p>
         </div>
     </footer>

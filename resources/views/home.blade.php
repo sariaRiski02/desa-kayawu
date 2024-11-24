@@ -8,19 +8,19 @@
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Selamat Datang di Desa Kayawu</h1>
-                <p class="mb-5">Desa yang indah dan sejahtera, tempat di mana tradisi dan modernitas berpadu.</p>
+                <h1 class="mb-5 text-5xl font-bold">Selamat Datang di kelurahan Kayawu</h1>
+                <p class="mb-5">kelurahan yang indah dan sejahtera, tempat di mana tradisi dan modernitas berpadu.</p>
             </div>
         </div>
     </div>
 
-     <!-- Tentang Desa -->
+     <!-- Tentang kelurahan -->
      <div id="tentang" class="container mx-auto px-4 py-8">
         <div class="card lg:card-side bg-base-100 shadow-xl">
-            <figure><img src="{{ asset('storage/img/kayawu-lanscape.jpg') }}" alt="Desa" class="w-full lg:w-96"/></figure>
+            <figure><img src="{{ asset('storage/img/kayawu-lanscape.jpg') }}" alt="kelurahan" class="w-full lg:w-96"/></figure>
             <div class="card-body">
-                <h2 class="card-title">Tentang Desa Kayawu</h2>
-                <p>Desa kami terletak di Tomohon utara, dengan sejarah panjang dan budaya yang kaya. Kami bangga dengan keberagaman dan semangat gotong royong.</p>
+                <h2 class="card-title">Tentang kelurahan Kayawu</h2>
+                <p>kelurahan kami terletak di Tomohon utara, dengan sejarah panjang dan budaya yang kaya. Kami bangga dengan keberagaman dan semangat gotong royong.</p>
                 <div class="card-actions justify-end">
                     <a href="{{ route('about') }}" class="btn btn-primary">Selengkapnya</a>
                 </div>
@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <!-- Potensi Desa -->
+    <!-- Potensi kelurahan -->
     <div id="potensi" class="container mx-auto px-4 py-8">
         <h2 class="text-3xl font-bold text-center mb-8">Potensi</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -36,7 +36,7 @@
                 <figure><img src="{{ asset('storage/img/pertanian.jpg') }}" alt="Pertanian" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">Pertanian</h2>
-                    <p>Desa kami memiliki lahan pertanian yang subur</p>
+                    <p>kelurahan kami memiliki lahan pertanian yang subur</p>
                 </div>
             </div>
             <div class="card bg-base-100 shadow-xl">
@@ -93,29 +93,29 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="card bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
-                    <img src="{{ asset('storage/img/kepala-desa.png') }}" alt="Kepala Desa" class="rounded-xl" />
+                    <img src="{{ asset('storage/img/kepala-kelurahan.png') }}" alt="Kepala kelurahan" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
-                    <h2 class="card-title">Kepala Desa</h2>
-                    <p>[Nama Kepala Desa]</p>
+                    <h2 class="card-title">Kepala kelurahan</h2>
+                    <p>[Nama Kepala kelurahan]</p>
                 </div>
             </div>
             <div class="card bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
-                    <img src="{{ asset('storage/img/kepala-desa.png') }}" alt="Sekretaris Desa" class="rounded-xl" />
+                    <img src="{{ asset('storage/img/kepala-kelurahan.png') }}" alt="Sekretaris kelurahan" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
-                    <h2 class="card-title">Sekretaris Desa</h2>
-                    <p>[Nama Sekretaris Desa]</p>
+                    <h2 class="card-title">Sekretaris kelurahan</h2>
+                    <p>[Nama Sekretaris kelurahan]</p>
                 </div>
             </div>
             <div class="card bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
-                    <img src="{{ asset('storage/img/kepala-desa.png') }}" alt="Bendahara Desa" class="rounded-xl" />
+                    <img src="{{ asset('storage/img/kepala-kelurahan.png') }}" alt="Bendahara kelurahan" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
-                    <h2 class="card-title">Bendahara Desa</h2>
-                    <p>[Nama Bendahara Desa]</p>
+                    <h2 class="card-title">Bendahara kelurahan</h2>
+                    <p>[Nama Bendahara kelurahan]</p>
                 </div>
             </div>
         </div>
@@ -128,8 +128,8 @@
                 <div class="card bg-base-100 shadow-xl">
                     <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4b9.jpg" alt="Berita 1" /></figure>
                     <div class="card-body">
-                        <h2 class="card-title">Berita Desa Terbaru</h2>
-                        <p>Informasi terkini seputar kegiatan dan perkembangan desa</p>
+                        <h2 class="card-title">Berita kelurahan Terbaru</h2>
+                        <p>Informasi terkini seputar kegiatan dan perkembangan kelurahan</p>
                         <div class="card-actions justify-end">
                             <button class="btn btn-primary">Baca Selengkapnya</button>
                         </div>
@@ -139,7 +139,7 @@
                     <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4b9.jpg" alt="Berita 2" /></figure>
                     <div class="card-body">
                         <h2 class="card-title">Kegiatan Masyarakat</h2>
-                        <p>Berbagai kegiatan positif yang dilakukan warga desa</p>
+                        <p>Berbagai kegiatan positif yang dilakukan warga kelurahan</p>
                         <div class="card-actions justify-end">
                             <button class="btn btn-primary">Baca Selengkapnya</button>
                         </div>
@@ -148,8 +148,8 @@
                 <div class="card bg-base-100 shadow-xl">
                     <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4b9.jpg" alt="Berita 3" /></figure>
                     <div class="card-body">
-                        <h2 class="card-title">Pembangunan Desa</h2>
-                        <p>Progres dan rencana pembangunan infrastruktur desa</p>
+                        <h2 class="card-title">Pembangunan kelurahan</h2>
+                        <p>Progres dan rencana pembangunan infrastruktur kelurahan</p>
                         <div class="card-actions justify-end">
                             <button class="btn btn-primary">Baca Selengkapnya</button>
                         </div>

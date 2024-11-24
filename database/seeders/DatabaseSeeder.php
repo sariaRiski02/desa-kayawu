@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        $this->call([
+            LingkunganSeeder::class,
+            ResidentSeeder::class
+        ]);
+
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'kayawuAdmin@kayawu.com',

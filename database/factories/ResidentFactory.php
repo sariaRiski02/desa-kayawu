@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Lingkungan;
+use App\Models\resident;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +19,24 @@ class ResidentFactory extends Factory
     public function definition(): array
     {
 
+        $pekerjaan = [
+            'Petani',
+            'Guru',
+            'Tukang Kayu',
+            'Pemilik Toko',
+            'Penjahit',
+            'Sopir',
+            'Mekanik',
+            'Perawat',
+            'Bidan'
+        ];
+
         return [
             "name" => fake()->name(),
+            "job" => $this->faker->randomElement($pekerjaan),
+            "date" => fake()->date(),
+            "lingkungan_id" => Lingkungan::inRandomOrder()->first()->id
+
         ];
     }
 }
