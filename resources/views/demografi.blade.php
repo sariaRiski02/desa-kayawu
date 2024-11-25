@@ -22,36 +22,36 @@
             <!-- Flexbox untuk Diagram Batang -->
             <div class="flex items-end justify-between h-64">
                 <div class="flex flex-col items-center justify-content-start border w-full h-full">
+                    <div class="mt-2 border">Ling. 01</div>
                     <div class="bg-blue-500 text-center text-white w-full" style="height: 50%">50%</div>
-                    <div class="mt-2 border">RT 01</div>
                 </div>
                 <div class="flex flex-col items-center border w-full w-full h-full">
+                    <div class="mt-2">Ling. 02</div>
                     <div class="bg-yellow-500 text-center text-white w-full" style="height: 70%">70%</div>
-                    <div class="mt-2">RT 02</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
+                    <div class="mt-2">Ling. 03</div>
                     <div class="bg-red-500 text-center text-white w-full" style="height: 30%">30%</div>
-                    <div class="mt-2">RT 03</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
+                    <div class="mt-2">Ling. 04</div>
                     <div class="bg-green-500 text-center text-white w-full" style="height: 90%">90%</div>
-                    <div class="mt-2">RT 04</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
+                    <div class="mt-2">Ling. 05</div>
                     <div class="bg-purple-500 text-center text-white w-full" style="height: 60%">60%</div>
-                    <div class="mt-2">RT 05</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
+                    <div class="mt-2">Ling. 06</div>
                     <div class="bg-teal-500 text-center text-white w-full" style="height: 40%">40%</div>
-                    <div class="mt-2">RT 06</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
+                    <div class="mt-2">Ling. 07</div>
                     <div class="bg-indigo-500 text-center text-white w-full" style="height: 75%">75%</div>
-                    <div class="mt-2">RT 07</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
+                    <div class="mt-2">Ling. 08</div>
                     <div class="bg-pink-500 text-center text-white w-full" style="height: 35%">35%</div>
-                    <div class="mt-2">RT 08</div>
                 </div>
             </div>
         </div>

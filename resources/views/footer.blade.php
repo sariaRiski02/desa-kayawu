@@ -29,5 +29,6 @@
     <footer class="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
             <p>© 2024 Kelurahan Kayawu - Hak Cipta Dilindungi</p>
+            
         </div>
     </footer>

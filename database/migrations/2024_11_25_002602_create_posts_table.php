@@ -11,23 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('residents', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('job');
-            $table->date('date');
-            $table->unsignedBigInteger('id_lingkungan');
-            $table->timestamps();
+            $table->string('title');
+            $table->string('slug');
+            $table->string('content');
+            $table->string('status');
+            $table->string('image');
         });
     }
-
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('residents');
+        Schema::dropIfExists('posts');
     }
 };

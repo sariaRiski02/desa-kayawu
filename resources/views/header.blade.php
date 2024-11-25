@@ -20,18 +20,18 @@
                 </div>
             </div>
 
-            @if (!Auth::user())
+            {{-- @if (!Auth::user()) --}}
                 <!-- Secondary Nav -->
                 <div class="hidden md:flex items-center space-x-1 custom-font">
                     <a href="{{ route('login') }}" class=" btn btn-primary">Login</a>
                 </div>  
-            @else
+            {{-- @else --}}
             
                 <!-- Dashboard Button -->
                 <div class="hidden md:flex items-center space-x-1 custom-font">
-                    <a href="#" class="btn btn-primary">Dashboard</a>
+                    <a href="{{ route('berita') }}" class="btn btn-primary">Dashboard</a>
                 </div>
-            @endif
+            {{-- @endif --}}
 
 
             <!-- Mobile Button -->

@@ -11,23 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('residents', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('job');
-            $table->date('date');
-            $table->unsignedBigInteger('id_lingkungan');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->foreignId('id_category')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
-
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('residents');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropForeign(['id_category']);
+        });
     }
 };

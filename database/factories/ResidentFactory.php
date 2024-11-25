@@ -35,7 +35,7 @@ class ResidentFactory extends Factory
             "name" => fake()->name(),
             "job" => $this->faker->randomElement($pekerjaan),
             "date" => fake()->date(),
-            "lingkungan_id" => Lingkungan::inRandomOrder()->first()->id
+            "id_lingkungan" => Lingkungan::inRandomOrder()->first()->id
 
         ];
     }
