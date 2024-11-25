@@ -10,12 +10,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('post');
+        $posts = Post::with('category')->get();
+        return view('post', compact('posts'));
     }
 
     public function addIndex()
     {
-
         $categories = Category::with('post')->latest()->get();
         return view('addPost', compact('categories'));
     }
@@ -57,5 +57,12 @@ class DashboardController extends Controller
             return redirect()->route('home');
         }
         return view('singleNews', compact('post'));
+    }
+
+    public function updateIndex($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        $categories = Category::all();
+        return view('updatePost', compact('post', 'categories'));
     }
 }

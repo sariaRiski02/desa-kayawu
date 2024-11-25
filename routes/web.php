@@ -23,7 +23,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/berita', [DashboardController::class, 'index'])->name('berita');
     Route::get('/berita/add', [DashboardController::class, 'addIndex'])->name('berita.add');
     Route::post('/berita/add', [DashboardController::class, 'add'])->name('berita.add');
-    Route::get('/berita/update', [DashboardController::class, 'update'])->name('berita.update');
+    Route::get('/berita/update/{slug}', [DashboardController::class, 'updateIndex'])->name('berita.update');
     Route::get('/berita/delete{slug}', [DashboardController::class, 'delete'])->name('berita.delete');
     Route::get('/berita/{slug}', [DashboardController::class, 'single'])->name('single.post');
 });

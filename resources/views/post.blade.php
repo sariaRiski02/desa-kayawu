@@ -54,36 +54,22 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($posts as $item)
+                  
+                  
                   <tr>
-                    <th>1</th>
-                    <td>How to Start Beritaging</td>
-                    <td>Tutorial</td>
-                    <td><span class="badge badge-success">Published</span></td>
+                    <th>{{ $item->id }}</th>
+                    <td>{{ $item->title }}</td>
+                    <td>{{ $item->category->name }}</td>
+                    <td><span class="badge badge-success">{{ $item->status }}</span></td>
                     <td>
-                      <button class="btn btn-sm btn-warning">Edit</button>
-                      <button class="btn btn-sm btn-error">Delete</button>
+                      <a href="{{ route('berita.update',$item->slug) }}" class="btn btn-sm btn-warning">Edit</a>
+                      <a class="btn btn-sm btn-error">Delete</a>
                     </td>
                   </tr>
-                  <tr>
-                    <th>2</th>
-                    <td>Top 10 Beritaging Tools</td>
-                    <td>Resources</td>
-                    <td><span class="badge badge-warning">Draft</span></td>
-                    <td>
-                      <button class="btn btn-sm btn-warning">Edit</button>
-                      <button class="btn btn-sm btn-error">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>3</th>
-                    <td>Understanding SEO for Beritas</td>
-                    <td>SEO</td>
-                    <td><span class="badge badge-success">Published</span></td>
-                    <td>
-                      <button class="btn btn-sm btn-warning">Edit</button>
-                      <button class="btn btn-sm btn-error">Delete</button>
-                    </td>
-                  </tr>
+                  
+                      
+                  @endforeach
                 </tbody>
               </table>
             </div>
