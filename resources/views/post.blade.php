@@ -25,15 +25,15 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
             <div class="stat bg-primary text-primary-content">
               <div class="stat-title text-white">Total Post</div>
-              <div class="stat-value">12</div>
+              <div class="stat-value">{{ $countPost }}</div>
             </div>
             <div class="stat bg-warning text-primary-content">
               <div class="stat-title text-white">Total Kategori</div>
-              <div class="stat-value">15</div>
+              <div class="stat-value">{{ $countCategory }}</div>
             </div>
             <div class="stat bg-info text-primary-content">
               <div class="stat-title text-white">Jumlah Yang diarsip</div>
-              <div class="stat-value">11</div>
+              <div class="stat-value">{{$countDraft}}</div>
             </div>
             
           </div>
@@ -58,13 +58,20 @@
                   
                   
                   <tr>
-                    <th>{{ $item->id }}</th>
+                    <th>{{ $loop->iteration }}</th>
                     <td>{{ $item->title }}</td>
                     <td>{{ $item->category->name }}</td>
-                    <td><span class="badge badge-success">{{ $item->status }}</span></td>
+                    <td><span class="badge 
+                       @if ($item->status == 'published')
+                           badge-success
+                       @else
+                       badge-warning
+                       @endif
+                      ">{{ $item->status }}</span></td>
                     <td>
                       <a href="{{ route('berita.update',$item->slug) }}" class="btn btn-sm btn-warning">Edit</a>
-                      <a class="btn btn-sm btn-error">Delete</a>
+                      <a href="{{ route('single.post', $item->slug) }}"  class="btn btn-sm btn-infox" target="_blank">Lihat</a>
+                      <a href="{{ route('berita.delete', $item->slug) }}" class="btn btn-sm btn-error">Delete</a>
                     </td>
                   </tr>
                   
@@ -76,4 +83,57 @@
           </div>
         </div>
       </div>
+
+      
+      {{-- nontifikasi --}}
+    @if (session('error'))
+    <div role="alert" class="fixed m-5 w-auto alert alert-error">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 shrink-0 stroke-current"
+          fill="none"
+          viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>{{ session('error') }}</span>
+        <button id="close">
+            X
+        </button>
+    </div>
+    @endif
+
+
+    @if (session('success'))
+    <div role="alert" class="fixed m-5 w-auto alert alert-success">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 shrink-0 stroke-current"
+          fill="none"
+          viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>{{ session('success') }}</span>
+        <button id="close">
+            X
+        </button>
+    </div>
+    @endif
+
+    <script>
+        document.getElementById('close').addEventListener('click', function() {
+            this.parentElement.style.display = 'none';
+        });
+    </script>
+
+    
+    
+
 @endsection

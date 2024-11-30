@@ -4,66 +4,60 @@
 @section('title', 'Demografi | kayawu')
 
 @section('content')
-
     <div class="min-h-screen bg-base-200">
         <!-- Hero Section -->
         <div class="hero bg-base-100 py-8">
             <div class="hero-content text-center">
                 <div>
                     <h1 class="text-5xl font-bold text-primary">Demografi</h1>
-                    <p class="py-6">Informasi lengkap mengenai struktur dan karakteristik penduduk</p>
+                    <p class="py-6">Informasi lengkap mengenai data kependudukan dan karakteristik penduduk</p>
                 </div>
             </div>
         </div>
 
+        <h1 class="text-xl font-bold text-center mb-3 pt-4">Persentase penduduk per Lingkungan</h1>
         <div class="p-6">
-            <h1 class="text-2xl font-bold text-center mb-6">Data Penduduk Desa</h1>
+            
         
             <!-- Flexbox untuk Diagram Batang -->
-            <div class="flex items-end justify-between h-64">
-                <div class="flex flex-col items-center justify-content-start border w-full h-full">
-                    <div class="mt-2 border">Ling. 01</div>
-                    <div class="bg-blue-500 text-center text-white w-full" style="height: 50%">50%</div>
+            
+            <div class="flex items-end justify-between h-64 border bg-white shadow-xl rounded rounded-5">
+                <div class="flex flex-col items-center w-full h-full">
+                    <div class="mt-2">Ling. 01</div>
+                    <div class="bg-blue-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan1'] }}%">{{ $lingkungan['lingkungan1'] }}%</div>
                 </div>
-                <div class="flex flex-col items-center border w-full w-full h-full">
+                <div class="flex flex-col items-center w-full h-full">
                     <div class="mt-2">Ling. 02</div>
-                    <div class="bg-yellow-500 text-center text-white w-full" style="height: 70%">70%</div>
+                    <div class="bg-yellow-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan2'] }}">{{ $lingkungan['lingkungan2'] }}%</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
                     <div class="mt-2">Ling. 03</div>
-                    <div class="bg-red-500 text-center text-white w-full" style="height: 30%">30%</div>
+                    <div class="bg-red-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan3'] }}%">{{ $lingkungan['lingkungan3'] }}%</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
                     <div class="mt-2">Ling. 04</div>
-                    <div class="bg-green-500 text-center text-white w-full" style="height: 90%">90%</div>
+                    <div class="bg-green-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan4'] }}%">{{ $lingkungan['lingkungan4'] }}%</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
                     <div class="mt-2">Ling. 05</div>
-                    <div class="bg-purple-500 text-center text-white w-full" style="height: 60%">60%</div>
+                    <div class="bg-purple-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan5'] }}%">{{ $lingkungan['lingkungan5'] }}%</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
                     <div class="mt-2">Ling. 06</div>
-                    <div class="bg-teal-500 text-center text-white w-full" style="height: 40%">40%</div>
+                    <div class="bg-teal-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan6'] }}%">{{ $lingkungan['lingkungan6'] }}%</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
                     <div class="mt-2">Ling. 07</div>
-                    <div class="bg-indigo-500 text-center text-white w-full" style="height: 75%">75%</div>
+                    <div class="bg-indigo-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan7'] }}%">{{ $lingkungan['lingkungan7'] }}%</div>
                 </div>
                 <div class="flex flex-col items-center w-full h-full">
                     <div class="mt-2">Ling. 08</div>
-                    <div class="bg-pink-500 text-center text-white w-full" style="height: 35%">35%</div>
+                    <div class="bg-pink-500 text-center text-white w-full" style="height: {{ $lingkungan['lingkungan8'] }}%">{{ $lingkungan['lingkungan8'] }}%</div>
                 </div>
             </div>
         </div>
-        
-            
-            
-            
-            
-
             <!-- Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
                 <!-- Jumlah Penduduk Card -->
                 <div class="card bg-base-100 shadow-xl">
                     <div class="card-body">
@@ -75,115 +69,131 @@
                         </h2>
                     <div class="flex items-end justify-between h-64">
                         <div class="flex flex-col items-center w-full h-full">
-                            <div class="bg-blue-500 text-center text-white w-full" style="height: 60%">60%</div>
+                            <div class="bg-blue-500 text-center text-white w-full" style="height: {{ $genderM }}%">{{ $genderM }}%</div>
                             <div class="mt-2">Laki-laki</div>
                         </div>
                         <div class="flex flex-col items-center w-full h-full">
-                            <div class="bg-pink-500 text-center text-white w-full" style="height: 40%">40%</div>
+                            <div class="bg-pink-500 text-center text-white w-full" style="height: {{ $genderW }}%">{{ $genderW }}%</div>
                             <div class="mt-2">Perempuan</div>
                         </div>
                     </div>
                     </div>
                 </div>
 
-                <!-- Struktur Penduduk Card -->
+                <!-- Usia Penduduk Card -->
                 <div class="card bg-base-100 shadow-xl">
                     <div class="card-body">
-                        <h2 class="card-title text-secondary">
+                        <h2 class="card-title text-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z" />
                             </svg>
-                            2. Struktur Penduduk
+                            Usia Penduduk
                         </h2>
-                        <div class="collapse collapse-plus bg-base-200">
-                            <input type="checkbox" /> 
-                            <div class="collapse-title font-medium">
-                                Jenis Kelamin
+                        <div class="flex items-end justify-between h-64">
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-blue-500 text-center text-white w-full" style="height: {{ $age0_14 }}%">{{ $age0_14 }}%</div>
+                                <div class="mt-2">0-14 tahun</div>
                             </div>
-                            <div class="collapse-content"> 
-                                <p>Laki-laki dan perempuan, rasio jenis kelamin</p>
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-green-500 text-center text-white w-full" style="height: {{ $age14_65 }}%">{{ $age14_65 }}%</div>
+                                <div class="mt-2">15-64 tahun</div>
                             </div>
-                        </div>
-                        <div class="collapse collapse-plus bg-base-200">
-                            <input type="checkbox" /> 
-                            <div class="collapse-title font-medium">
-                                Kelompok Umur
-                            </div>
-                            <div class="collapse-content"> 
-                                <ul class="list-disc list-inside">
-                                    <li>Anak-anak (0-14 tahun)</li>
-                                    <li>Usia produktif (15-64 tahun)</li>
-                                    <li>Usia lanjut (65 tahun ke atas)</li>
-                                </ul>
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-red-500 text-center text-white w-full" style="height: {{ $age65_up == 0 ? '10' : $age65_up }}%">{{ $age65_up }}%</div>
+                                <div class="mt-2">65 > tahun</div>
                             </div>
                         </div>
-                        <div class="collapse collapse-plus bg-base-200">
-                            <input type="checkbox" /> 
-                            <div class="collapse-title font-medium">
-                                Status Perkawinan
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Agama Penduduk Card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V4m0 4a4 4 0 110 8 4 4 0 010-8zm0 0V4m0 4a4 4 0 110 8 4 4 0 010-8z" />
+                            </svg>
+                            Agama Penduduk
+                        </h2>
+                        <div class="flex items-end justify-between h-64">
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-blue-500 text-center text-white w-full" style="height: {{ $islam }}%">{{ $islam }}%</div>
+                                <div class="mt-2">Islam</div>
                             </div>
-                            <div class="collapse-content"> 
-                                <ul class="list-disc list-inside">
-                                    <li>Belum menikah</li>
-                                    <li>Menikah</li>
-                                    <li>Cerai hidup</li>
-                                    <li>Cerai mati</li>
-                                </ul>
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-yellow-500 text-center text-white w-full" style="height: {{ $kristen }}%">{{ $kristen }}%</div>
+                                <div class="mt-2">Kristen</div>
+                            </div>
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-red-500 text-center text-white w-full" style="height: {{ $hindu }}%">{{ $hindu }}%</div>
+                                <div class="mt-2">Hindu</div>
+                            </div>
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-green-500 text-center text-white w-full" style="height: {{ $budha }}%">{{ $budha }}%</div>
+                                <div class="mt-2">Buddha</div>
+                            </div>
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-purple-500 text-center text-white w-full" style="height: {{ $konghuchu}}%">{{ $konghuchu}}%</div>
+                                <div class="mt-2">konghuchu</div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Distribusi Penduduk Card -->
+                <!-- tingkat pendudukan Penduduk Card -->
                 <div class="card bg-base-100 shadow-xl">
                     <div class="card-body">
-                        <h2 class="card-title text-accent">
+                        <h2 class="card-title text-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z" />
                             </svg>
-                            3. Distribusi Penduduk
+                            Tingkat Pendidikan
                         </h2>
-                        <ul class="list-disc list-inside">
-                            <li>Persebaran penduduk di wilayah tertentu</li>
-                            <li>Kepadatan penduduk per kilometer persegi</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Pendidikan Card -->
-                <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body">
-                        <h2 class="card-title text-info">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                            </svg>
-                            4. Pendidikan
-                        </h2>
-                        <ul class="list-disc list-inside">
-                            <li>Tingkat pendidikan tertinggi yang ditempuh</li>
-                            <li>Tingkat melek huruf</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Kesehatan Card -->
-                <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body">
-                        <h2 class="card-title text-success">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                            5. Kesehatan
-                        </h2>
-                        <ul class="list-disc list-inside">
-                            <li>Angka kelahiran dan kematian</li>
-                            <li>Angka harapan hidup</li>
-                        </ul>
+                        <div class="flex items-end justify-between h-64">
+                            @foreach ($pendidikanCounts as $item)
+                                
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="bg-[{{ $item['backgroundColor'] }}] text-center text-white w-full" style="height: {{ $item['value'] }}%">{{ $item['value'] }}%</div>
+                                <div class="mt-2">{{ $item['name'] }}</div>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Pekerjaan Penduduk Card -->
+            <div class="card bg-base-100 shadow-xl m-3">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z" />
+                        </svg>
+                        Pekerjaan Penduduk
+                    </h2>
+                    <div class="overflow-x-auto">
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            @foreach ($top10Pekerjaan as $item)
+                                <div class="flex flex-col items-center w-full h-full">
+                                    <div class="bg-[{{ $item['backgroundColor'] }}] text-center text-black w-full"  style="height: 50%">
+                                        <span class="block">{{ $item['value'] }}%</span>
+                                    </div>
+                                    <div class="mt-2">{{ $item['name'] }}</div>
+                                </div>
+                            @endforeach
+
+                            <div class="flex flex-col items-center w-full h-full">
+                                <div class="text-center rounded bg-gray-200 text-black w-full py-2" style="height: 50%">
+                                    <span class="block">{{ $item['value'] }}%</span>
+                                </div>
+                                <div class="mt-2">Lainnya</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 

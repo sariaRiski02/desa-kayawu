@@ -15,15 +15,16 @@
           </div>
         </div>
   
+        
         <!-- Add Blog Form -->
         <div class="mt-8 py-5 px-5">
             <h2 class="text-xl font-bold mb-4">Tambahkan Berita Baru</h2>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('berita.update',$post->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
                 <label for="title" class="block text-sm font-medium text-gray-700">Judul</label>
                 <input type="text" name="title" id="title"
-                placeholder="{{ $post->title }}" class="input input-bordered w-full" value="{{ old('title') }}" required>
+                placeholder="{{ $post->title }}" class="input input-bordered w-full" value="{{ old('title') }}">
                 @error('title')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
@@ -45,17 +46,20 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="content" class="block text-sm font-medium text-gray-700">Konten</label>
-                <textarea name="content" id="content" 
+                <label for="content" class="block text-sm font-medium text-gray-700">
+                    Konten
+                </label>
+                <trix-editor input="content" class="trix-content">
+                    {!! $post->content !!}
+                </trix-editor>
                 
-                class="textarea textarea-bordered w-full" rows="5" required>{{ $post->content }}</textarea>
                 @error('content')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
             <div class="mb-4">
                 <label for="photo" class="block text-sm font-medium text-gray-700">Foto</label>
-                <input type="file" name="image" id="photo" class="input input-bordered w-full" accept="image/*" required>
+                <input type="file" name="image" id="photo" class="input input-bordered w-full" accept="image/*" >
                 @error('photo')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror

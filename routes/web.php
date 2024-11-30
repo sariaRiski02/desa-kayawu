@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\DemografiController;
 
 Route::get('/', function () {
     return view('home');
@@ -12,7 +12,8 @@ Route::get('/', function () {
 
 Route::view('/tentang', 'about')->name('about');
 Route::view('/pemerintahan', 'gov')->name('gov');
-Route::view('/demografi', 'demografi')->name('demo');
+
+Route::get('/demografi', [DemografiController::class, 'index'])->name('demo');
 Route::get('/berita', [NewsController::class, 'index'])->name('news');
 Route::view('/login', 'login')->name('login');
 Route::post('/login', [UserController::class, 'login'])->name('login');
@@ -24,6 +25,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/berita/add', [DashboardController::class, 'addIndex'])->name('berita.add');
     Route::post('/berita/add', [DashboardController::class, 'add'])->name('berita.add');
     Route::get('/berita/update/{slug}', [DashboardController::class, 'updateIndex'])->name('berita.update');
-    Route::get('/berita/delete{slug}', [DashboardController::class, 'delete'])->name('berita.delete');
+    Route::post('/berita/update/{slug}', [DashboardController::class, 'update'])->name('berita.update');
+    Route::get('/berita/delete/{slug}', [DashboardController::class, 'delete'])->name('berita.delete');
     Route::get('/berita/{slug}', [DashboardController::class, 'single'])->name('single.post');
 });

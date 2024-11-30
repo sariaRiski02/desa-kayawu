@@ -20,7 +20,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->word,
             'content' => $this->faker->text,
-            'status' => $this->faker->word,
+            'status' => $this->faker->randomElement(['published', 'draft']),
             'id_category' => Category::inRandomOrder()->first()->id,
             'image' => $this->faker->url,
         ];

@@ -9,12 +9,21 @@
             
             @foreach ($news as $item)
                 <div class="card bg-base-100 shadow-xl">
-                    <figure><img src="{{ asset('/storage/'.$item->image) }}" alt="" class="w-full h-48 object-cover"></figure>
+
+                    @if (empty($item->image))
+                        <figure><img src="{{ asset('/storage/'.$item->image) }}" alt="" class="w-full h-48 object-cover"></figure>
+                    @else
+                    <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
+                        <span class="text-gray-500">kayawu news</span>
+                    </div>
+                    
+                    @endif
+                    
                     <div class="card-body">
                         <h2 class="card-title">{{ $item->title }}</h2>
                         <p>{{ $item->category->name }}</p>
                         <div class="card-actions justify-end">
-                            <a href="{{ route('single.post',$item->slug) }}" class="btn btn-primary">Read More</a>
+                            <a href="{{ route('single.post',$item->slug) }}" class="btn btn-primary">Baca</a>
                         </div>
                     </div>
                 </div>

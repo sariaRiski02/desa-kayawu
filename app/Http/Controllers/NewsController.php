@@ -9,7 +9,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = Post::all();
+        $news = Post::where('status', 'published')->get();
 
         return view('news', compact('news'));
     }

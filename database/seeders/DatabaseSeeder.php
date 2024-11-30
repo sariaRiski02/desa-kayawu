@@ -6,9 +6,9 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\PostSeeder;
+use Database\Seeders\FamilySeeder;
 use Database\Seeders\CategorySeeder;
-use Database\Seeders\ResidentSeeder;
-use Database\Seeders\LingkunganSeeder;
+use Database\Seeders\MemberFamilySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call([
-            LingkunganSeeder::class,
-            ResidentSeeder::class,
+            FamilySeeder::class,
+            MemberFamilySeeder::class,
             CategorySeeder::class,
             PostSeeder::class
         ]);

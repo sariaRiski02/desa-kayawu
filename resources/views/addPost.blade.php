@@ -45,14 +45,17 @@
             </div>
             <div class="mb-4">
                 <label for="content" class="block text-sm font-medium text-gray-700">Konten</label>
-                <textarea name="content" id="content" class="textarea textarea-bordered w-full" rows="5" required>{{ old('content') }}</textarea>
+                <input id="content" type="hidden" name="content">
+                <trix-editor input="content" class="trix-content">
+                    {{ old('content') }}
+                </trix-editor>
                 @error('content')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
             <div class="mb-4">
                 <label for="photo" class="block text-sm font-medium text-gray-700">Foto</label>
-                <input type="file" name="image" id="photo" class="input input-bordered w-full" accept="image/*" required>
+                <input type="file" name="image" id="photo" class="input input-bordered w-full" accept="image/*">
                 @error('photo')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
@@ -73,58 +76,5 @@
             </form>
         </div>
       </div>
-
-
-    
-
-    @if (session('error'))
-    <div role="alert" class="fixed m-5 w-auto alert alert-error">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 shrink-0 stroke-current"
-          fill="none"
-          viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span>{{ session('error') }}</span>
-        <button id="close">
-            X
-        </button>
-    </div>
-    @endif
-
-
-    @if (session('success'))
-    <div role="alert" class="fixed m-5 w-auto alert alert-success">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 shrink-0 stroke-current"
-          fill="none"
-          viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span>{{ session('success') }}</span>
-        <button id="close">
-            X
-        </button>
-    </div>
-    @endif
-
-    <script>
-        document.getElementById('close').addEventListener('click', function() {
-            this.parentElement.style.display = 'none';
-        });
-    </script>
-
-    
-    
 
 @endsection
