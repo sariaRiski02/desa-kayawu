@@ -16,8 +16,12 @@
     <div class="w-64 bg-base-200 p-4">
       <h2 class="text-xl font-bold mb-6">Menejemen Informasi</h2>
       <ul class="menu bg-base-200 w-full">
-        <li><a class="active" href="#">Posts</a></li>
-        <li><a href="#">Data penduduk</a></li>
+        <li><a class="@if (Route::is('berita'))
+            active
+        @endif" href="{{ route('berita') }}">Posts</a></li>
+        <li><a class="@if (Route::is('dashboard.resident'))
+            active
+        @endif" href="{{ route('dashboard.resident') }}">Data penduduk</a></li>
         <li><a href="#">Logout</a></li>
       </ul>
     </div>

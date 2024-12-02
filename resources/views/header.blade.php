@@ -13,10 +13,10 @@
                 <div class="hidden md:flex items-center space-x-1 custom-font">
                     <a href="{{ route('gov') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Pemerintahan</a>
                     <a href="{{ route('demo') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Demografi</a>
-                    <a href="#potensi" class="py-5 px-3 text-gray-700 hover:text-gray-900">Potensi</a>
+                    <a href="{{ route('potention') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Potensi</a>
                     <a href="{{ route('news') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Berita</a>
                     <a href="{{ route('about') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Tentang</a>
-                    <a href="#kontak" class="py-5 px-3 text-gray-700 hover:text-gray-900">Kontak</a>
+                    <a href="{{ route('contact') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Kontak</a>
                 </div>
             </div>
 
@@ -49,6 +49,6 @@
         <a href="#potensi" class="block py-2 px-4 text-sm hover:bg-gray-200">Potensi</a>
         <a href="{{ route('news') }}" class="block py-2 px-4 text-sm hover:bg-gray-200">Berita</a>
         <a href="{{ route('about') }}" class="block py-2 px-4 text-sm hover:bg-gray-200">Tentang Desa</a>
-        <a href="#kontak" class="block py-2 px-4 text-sm hover:bg-gray-200">Kontak</a>
+        <a href="{{ route('contact') }}" class="block py-2 px-4 text-sm hover:bg-gray-200">Kontak</a>
     </div>
 </nav>

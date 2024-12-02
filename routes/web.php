@@ -5,6 +5,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DemografiController;
+use App\Http\Controllers\ResidentController;
 
 Route::get('/', function () {
     return view('home');
@@ -12,20 +13,30 @@ Route::get('/', function () {
 
 Route::view('/tentang', 'about')->name('about');
 Route::view('/pemerintahan', 'gov')->name('gov');
+Route::view('/kontak', 'contact')->name('contact');
 
 Route::get('/demografi', [DemografiController::class, 'index'])->name('demo');
 Route::get('/berita', [NewsController::class, 'index'])->name('news');
 Route::view('/login', 'login')->name('login');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+Route::view('/potensi', 'potention')->name('potention');
 
 
 Route::prefix('dashboard')->group(function () {
-    Route::get('/berita', [DashboardController::class, 'index'])->name('berita');
-    Route::get('/berita/add', [DashboardController::class, 'addIndex'])->name('berita.add');
-    Route::post('/berita/add', [DashboardController::class, 'add'])->name('berita.add');
-    Route::get('/berita/update/{slug}', [DashboardController::class, 'updateIndex'])->name('berita.update');
-    Route::post('/berita/update/{slug}', [DashboardController::class, 'update'])->name('berita.update');
-    Route::get('/berita/delete/{slug}', [DashboardController::class, 'delete'])->name('berita.delete');
-    Route::get('/berita/{slug}', [DashboardController::class, 'single'])->name('single.post');
+    Route::prefix('berita')->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('berita');
+        Route::get('/add', [DashboardController::class, 'addIndex'])->name('berita.add');
+        Route::post('/add', [DashboardController::class, 'add'])->name('berita.add');
+        Route::get('/update/{slug}', [DashboardController::class, 'updateIndex'])->name('berita.update');
+        Route::put('/update/{slug}', [DashboardController::class, 'update'])->name('berita.update');
+        Route::get('/delete/{slug}', [DashboardController::class, 'delete'])->name('berita.delete');
+        Route::get('/{slug}', [DashboardController::class, 'single'])->name('single.post');
+    })->name('dashboard.berita');
+
+
+    Route::get('/penduduk', [ResidentController::class, 'index'])->name('dashboard.resident');
+    Route::get('/penduduk/add', [ResidentController::class, 'indexAdd'])->name('dashboard.resident.add');
+    route::post('/penduduk/add', [ResidentController::class, 'addResident'])->name('dashboard.resident.addResident');
+    Route::post('/penduduk/add/kk', [ResidentController::class, 'addKK'])->name('dashboard.resident.addKK');
 });

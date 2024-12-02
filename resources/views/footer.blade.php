@@ -21,14 +21,14 @@
                     <a><i class="fab fa-instagram text-2xl"></i></a>
                 </div>
             </div> 
-            
         </div>
     </footer>
 
     <!-- Copyright -->
     <footer class="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
-            <p>© 2024 Kelurahan Kayawu - Hak Cipta Dilindungi</p>
+
+            <p>© 2024 Kelurahan Kayawu - created by <a href="https://mrizkysaria.netlify.app">Rizky saria</a></p>
             
         </div>
     </footer>
