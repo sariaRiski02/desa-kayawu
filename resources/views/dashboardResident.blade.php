@@ -61,9 +61,9 @@
                     <td>{{ $item->address }}</td>
                     <td>{{ $item->nik }}</td>
                     <td>
-                      <a href="" class="btn btn-sm btn-warning">Edit</a>
+                      <a href="{{ route('dashboard.resident.update', $item->nik) }}" class="btn btn-sm btn-warning">Edit</a>
                       <a href=""  class="btn btn-sm btn-infox" target="_blank">Lihat</a>
-                      <a href="" class="btn btn-sm btn-error">Delete</a>
+                      <a href="{{ route('dashboard.resident.delete', $item->nik) }}" class="btn btn-sm btn-error">Delete</a>
                     </td>
                   </tr>
                   @endforeach

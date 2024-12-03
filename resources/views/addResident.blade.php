@@ -17,7 +17,7 @@
             @error('kk')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
-            <input type="text" id="kk" name="kk" class="input input-bordered w-full" placeholder="Enter KK number"  />
+            <input type="text" id="kk" name="kk" class="input input-bordered w-full" placeholder="Masukkan nomor KK"  />
         </div>
 
         <div class="mb-4">
@@ -27,7 +27,7 @@
             @error('name_family_head')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
-            <input type="text" id="name_family_head" name="name_family_head" class="input input-bordered w-full" placeholder="Enter head of family name"  />
+            <input type="text" id="name_family_head" name="name_family_head" class="input input-bordered w-full" placeholder="Masukkan nama kepala keluarga"  />
         </div>
 
         <button type="submit" class="btn btn-primary w-full">Simpan Kartu Keluarga</button>
@@ -54,15 +54,15 @@
         </div>
 
         <div class="mb-4">
-            <label for="name" class="block text-sm font-medium">Name</label>
-            <input type="text" id="name" name="name" class="input input-bordered w-full" placeholder="Enter member name" value="{{ old('name') }}" required/>
+            <label for="name" class="block text-sm font-medium">Nama</label>
+            <input type="text" id="name" name="name" class="input input-bordered w-full" placeholder="Masukkan nama Lengkap" value="{{ old('name') }}" required/>
             @error('name')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
         </div>
 
         <div class="mb-4">
-            <label for="gender" class="block text-sm font-medium">Gender</label>
+            <label for="gender" class="block text-sm font-medium">Jenis Kelamin</label>
             <select id="gender" name="gender" class="select select-bordered w-full">
                 <option value="" disabled {{ old('gender') === null ? 'selected' : '' }}>Pilih Jenis Kelamin</option>
                 <option value="L" >Laki-Laki</option>
@@ -90,7 +90,14 @@
 
         <div class="mb-4">
             <label for="marital_status" class="block text-sm font-medium">Status Pernikahan</label>
-            <input type="text" id="marital_status" name="marital_status" class="input input-bordered w-full" placeholder="Enter marital status" value="{{ old('marital_status') }}" required/>
+            <select id="marital_status" name="marital_status" class="select select-bordered w-full" required>
+                <option value="" disabled {{ old('marital_status') === null ? 'selected' : '' }}>Pilih Status Pernikahan</option>
+                @foreach ($status as $item)
+                <option value="single" {{ old('marital_status') == 'single' ? 'selected' : '' }}>{{ $item }}</option>
+                    
+                @endforeach
+                
+            </select>
             @error('marital_status')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -98,7 +105,7 @@
 
         <div class="mb-4">
             <label for="birth_place" class="block text-sm font-medium">Tempat Lahir</label>
-            <input type="text" id="birth_place" name="birth_place" class="input input-bordered w-full" placeholder="Enter birth place" value="{{ old('birth_place') }}" required/>
+            <input type="text" id="birth_place" name="birth_place" class="input input-bordered w-full" placeholder="Masukkan tempat lahir" value="{{ old('birth_place') }}" required/>
             @error('birth_place')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -114,7 +121,7 @@
 
         <div class="mb-4">
             <label for="religion" class="block text-sm font-medium">Agama</label>
-            <input type="text" id="religion" name="religion" class="input input-bordered w-full" placeholder="Enter religion" value="{{ old('religion') }}" required/>
+            <input type="text" id="religion" name="religion" class="input input-bordered w-full" placeholder="Masukkan agama" value="{{ old('religion') }}" required/>
             @error('religion')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -122,7 +129,12 @@
 
         <div class="mb-4">
             <label for="education_level" class="block text-sm font-medium">Pendidikan Terakhir</label>
-            <input type="text" id="education_level" name="education_level" class="input input-bordered w-full" placeholder="Enter education level" value="{{ old('education_level') }}" required/>
+            <select id="education_level" name="education_level" class="select select-bordered w-full" required>
+                <option value="" disabled {{ old('education_level') === null ? 'selected' : '' }}>Pilih Pendidikan Terakhir</option>
+                @foreach ($pendidikan as $item)
+                <option value="{{ $item }}" {{ old('education_level') == $item ? 'selected' : '' }}>{{ $item }}</option>
+                @endforeach
+            </select>
             @error('education_level')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -130,7 +142,7 @@
 
         <div class="mb-4">
             <label for="occupation" class="block text-sm font-medium">Pekerjaan</label>
-            <input type="text" id="occupation" name="occupation" class="input input-bordered w-full" placeholder="Enter occupation" value="{{ old('occupation') }}" required/>
+            <input type="text" id="occupation" name="occupation" class="input input-bordered w-full" placeholder="Masukkan pekerjaan" value="{{ old('occupation') }}" required/>
             @error('occupation')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -138,7 +150,14 @@
 
         <div class="mb-4">
             <label for="family_position" class="block text-sm font-medium">Status Dalam Keluarga</label>
-            <input type="text" id="family_position" name="family_position" class="input input-bordered w-full" placeholder="Enter family position" value="{{ old('family_position') }}" required/>
+            <select id="family_position" name="family_position" class="select select-bordered w-full" required>
+                <option value="" disabled {{ old('family_position') === null ? 'selected' : '' }}>Pilih Status Dalam Keluarga</option>
+                @foreach ($family_position as $item)
+                <option value="{{ $item }}" {{ old('family_position') == 'ayah' ? 'selected' : '' }}>{{ $item }}</option>
+                    
+                @endforeach
+                
+            </select>
             @error('family_position')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -146,7 +165,7 @@
 
         <div class="mb-4">
             <label for="nik" class="block text-sm font-medium">NIK</label>
-            <input type="text" id="nik" name="nik" class="input input-bordered w-full" placeholder="Enter NIK" value="{{ old('nik') }}" required/>
+            <input type="text" id="nik" name="nik" class="input input-bordered w-full" placeholder="Masukkan NIK" value="{{ old('nik') }}" required/>
             @error('nik')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
@@ -209,4 +228,3 @@
 
 </div>    
 @endsection
-    

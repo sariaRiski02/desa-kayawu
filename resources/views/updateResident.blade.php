@@ -1,103 +1,185 @@
-@extends('app.app')
+@extends('app.dashboard')
 @section('title', 'dashboard')
 
 @section('content')
 
-<!-- Form for Family -->
-<div class="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md">
-    <h2 class="text-2xl font-bold mb-4">Add Family</h2>
-    <form action="/families" method="POST">
-        <div class="mb-4">
-            <label for="kk" class="block text-sm font-medium">Family Card Number (KK)</label>
-            <input type="text" id="kk" name="kk" class="input input-bordered w-full" placeholder="Enter KK number" required />
-        </div>
 
-        <div class="mb-4">
-            <label for="name_family_head" class="block text-sm font-medium">Family Head Name</label>
-            <input type="text" id="name_family_head" name="name_family_head" class="input input-bordered w-full" placeholder="Enter head of family name" required />
-        </div>
-
-        <button type="submit" class="btn btn-primary w-full">Save Family</button>
-    </form>
-</div>
+<div class="flex flex-col w-full">
 
 <!-- Form for Member Family -->
-<div class="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md mt-6">
-    <h2 class="text-2xl font-bold mb-4">Add Member Family</h2>
-    <form action="/member-families" method="POST">
+<div class="w-full mx-auto p-4 bg-white shadow-md rounded-md mt-6">
+    <h2 class="text-2xl font-bold mb-4">Tambah Data Penduduk</h2>
+    <form action="{{ route('dashboard.resident.addResident') }}" method="POST">
+        @csrf
+        
         <div class="mb-4">
-            <label for="id_family" class="block text-sm font-medium">Family</label>
-            <select id="id_family" name="id_family" class="select select-bordered w-full" required>
-                <option value="" disabled selected>Select Family</option>
-                <!-- Populate dynamically -->
-                <option value="1">Family 1</option>
-                <option value="2">Family 2</option>
+            
+            <label for="id_family" class="block text-sm font-medium">Pilih KK</label>
+            <select id="id_family" name="id_family" class="select select-bordered w-full">
+                <option value="{{ $resident->family->name_family_head }}" >{{ $resident->family->name_family_head }}</option>
+                @foreach ($kk as $item)
+                <option value="{{ $item->kk }}" {{ old('id_family') == $item->kk ? 'selected' : '' }}>{{ $item->name_family_head }}</option>
+                @endforeach
             </select>
+            @error('id_family')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
             <label for="name" class="block text-sm font-medium">Name</label>
-            <input type="text" id="name" name="name" class="input input-bordered w-full" placeholder="Enter member name" required />
+            <input type="text" id="name" name="name" class="input input-bordered w-full" placeholder="Enter member name" value="{{ $resident->name }}" required/>
+            @error('name')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
             <label for="gender" class="block text-sm font-medium">Gender</label>
-            <select id="gender" name="gender" class="select select-bordered w-full" required>
-                <option value="" disabled selected>Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+            <select id="gender" name="gender" class="select select-bordered w-full">
+                <option value="" disabled {{ old('gender') === null ? 'selected' : '' }}>Pilih Jenis Kelamin</option>
+                <option value="L" >Laki-Laki</option>
+                <option value="P" >Perempuan</option>
             </select>
+            @error('gender')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="address" class="block text-sm font-medium">Address</label>
-            <input type="text" id="address" name="address" class="input input-bordered w-full" placeholder="Enter address" required />
+            <label for="address" class="block text-sm font-medium">Alamat</label>
+            <select id="address" name="address" class="select select-bordered w-full" required>
+                <option value="{{ $resident->address }}" {{ old('address') === null ? 'selected' : '' }}>{{ $resident->address }}</option>
+                @foreach ($lingkungan as $item)
+                <option value="{{ $item }}" {{ old('address') ==  $item  ? 'selected' : '' }}>{{ $item }}</option>
+                    
+                @endforeach
+                
+            </select>
+            @error('address')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="marital_status" class="block text-sm font-medium">Marital Status</label>
-            <input type="text" id="marital_status" name="marital_status" class="input input-bordered w-full" placeholder="Enter marital status" />
+            <label for="marital_status" class="block text-sm font-medium">Status Pernikahan</label>
+            <input type="text" id="marital_status" name="marital_status" class="input input-bordered w-full" placeholder="Enter marital status" value="{{ old('marital_status') }}" required/>
+            @error('marital_status')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="birth_place" class="block text-sm font-medium">Birth Place</label>
-            <input type="text" id="birth_place" name="birth_place" class="input input-bordered w-full" placeholder="Enter birth place" />
+            <label for="birth_place" class="block text-sm font-medium">Tempat Lahir</label>
+            <input type="text" id="birth_place" name="birth_place" class="input input-bordered w-full" placeholder="Enter birth place" value="{{ old('birth_place') }}" required/>
+            @error('birth_place')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="birth_date" class="block text-sm font-medium">Birth Date</label>
-            <input type="date" id="birth_date" name="birth_date" class="input input-bordered w-full" />
+            <label for="birth_date" class="block text-sm font-medium">Tanggal Lahir</label>
+            <input type="date" id="birth_date" name="birth_date" class="input input-bordered w-full" value="{{ old('birth_date') }}" required/>
+            @error('birth_date')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="religion" class="block text-sm font-medium">Religion</label>
-            <input type="text" id="religion" name="religion" class="input input-bordered w-full" placeholder="Enter religion" />
+            <label for="religion" class="block text-sm font-medium">Agama</label>
+            <input type="text" id="religion" name="religion" class="input input-bordered w-full" placeholder="Enter religion" value="{{ old('religion') }}" required/>
+            @error('religion')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="education_level" class="block text-sm font-medium">Education Level</label>
-            <input type="text" id="education_level" name="education_level" class="input input-bordered w-full" placeholder="Enter education level" />
+            <label for="education_level" class="block text-sm font-medium">Pendidikan Terakhir</label>
+            <input type="text" id="education_level" name="education_level" class="input input-bordered w-full" placeholder="Enter education level" value="{{ old('education_level') }}" required/>
+            @error('education_level')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="occupation" class="block text-sm font-medium">Occupation</label>
-            <input type="text" id="occupation" name="occupation" class="input input-bordered w-full" placeholder="Enter occupation" />
+            <label for="occupation" class="block text-sm font-medium">Pekerjaan</label>
+            <input type="text" id="occupation" name="occupation" class="input input-bordered w-full" placeholder="Enter occupation" value="{{ old('occupation') }}" required/>
+            @error('occupation')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
-            <label for="family_position" class="block text-sm font-medium">Family Position</label>
-            <input type="text" id="family_position" name="family_position" class="input input-bordered w-full" placeholder="Enter family position" required />
+            <label for="family_position" class="block text-sm font-medium">Status Dalam Keluarga</label>
+            <input type="text" id="family_position" name="family_position" class="input input-bordered w-full" placeholder="Enter family position" value="{{ old('family_position') }}" required/>
+            @error('family_position')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="mb-4">
             <label for="nik" class="block text-sm font-medium">NIK</label>
-            <input type="text" id="nik" name="nik" class="input input-bordered w-full" placeholder="Enter NIK" required />
+            <input type="text" id="nik" name="nik" class="input input-bordered w-full" placeholder="Enter NIK" value="{{ old('nik') }}" required/>
+            @error('nik')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary w-full">Save Member</button>
+        <button type="submit" class="btn btn-primary w-full">Simpan Data</button>
     </form>
 </div>
 
-    
+
+{{-- nontifikasi --}}
+@if (session('error'))
+<div role="alert" class="fixed m-5 w-auto alert alert-error">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 shrink-0 stroke-current"
+      fill="none"
+      viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span>{{ session('error') }}</span>
+    <button id="close">
+        X
+    </button>
+</div>
+@endif
+
+
+@if (session('success'))
+<div role="alert" class="fixed m-5 w-auto alert alert-success">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 shrink-0 stroke-current"
+      fill="none"
+      viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span>{{ session('success') }}</span>
+    <button id="close">
+        X
+    </button>
+</div>
+@endif
+
+<script>
+    document.getElementById('close').addEventListener('click', function() {
+        this.parentElement.style.display = 'none';
+    });
+</script>
+
+
+
+</div>    
 @endsection
     

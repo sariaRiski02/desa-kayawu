@@ -16,12 +16,14 @@ class DemografiController extends Controller
         $countResident = MemberFamily::count();
         $lingkungan = [];
         for ($i = 1; $i <= 8; $i++) {
-            $lingkungan["lingkungan$i"] = MemberFamily::where("address", "lingkungan $i")->count() / $countResident  * 100;
+            $lingkungan["lingkungan$i"] = round(MemberFamily::where("address", "lingkungan $i")->count() / $countResident  * 100);
         }
 
+
+
         // gender
-        $genderM = MemberFamily::where('gender', 'L')->count() / $countResident * 100;
-        $genderW = MemberFamily::where('gender', 'P')->count() / $countResident * 100;
+        $genderM = round(MemberFamily::where('gender', 'L')->count() / $countResident * 100);
+        $genderW = round(MemberFamily::where('gender', 'P')->count() / $countResident * 100);
 
 
         // group by age
@@ -29,44 +31,43 @@ class DemografiController extends Controller
         $age = $date->map(function ($item) {
             return Carbon::parse($item->birth_date)->age;
         });
-        $age0_14 = $age->filter(function ($item) {
+        $age0_14 = round($age->filter(function ($item) {
             return $item <= 14;
-        })->count() / $countResident * 100;
-        $age14_65 = $age->filter(function ($item) {
+        })->count() / $countResident * 100);
+        $age14_65 = round($age->filter(function ($item) {
             return $item >= 15 && $item < 65;
-        })->count()  / $countResident * 100;
-        $age65_up = $age->filter(function ($item) {
+        })->count()  / $countResident * 100);
+        $age65_up = round($age->filter(function ($item) {
             return $item >= 65;
-        })->count()  / $countResident * 100;
+        })->count()  / $countResident * 100);
 
 
         // group by religion
         $religion = MemberFamily::select('religion')->get();
-        $islam = $religion->filter(function ($item) {
+        $islam = round($religion->filter(function ($item) {
             return $item->religion == 'islam';
-        })->count() / $countResident * 100;
-        $kristen = $religion->filter(function ($item) {
+        })->count() / $countResident * 100);
+        $kristen = round($religion->filter(function ($item) {
             return $item->religion == 'kristen';
-        })->count() / $countResident * 100;
-        $katolik = $religion->filter(function ($item) {
+        })->count() / $countResident * 100);
+        $katolik = round($religion->filter(function ($item) {
             return $item->religion == 'katolik';
-        })->count() / $countResident * 100;
-        $hindu = $religion->filter(function ($item) {
+        })->count() / $countResident * 100);
+        $hindu = round($religion->filter(function ($item) {
             return $item->religion == 'hindu';
-        })->count() / $countResident * 100;
-        $budha = $religion->filter(function ($item) {
+        })->count() / $countResident * 100);
+        $budha = round($religion->filter(function ($item) {
             return $item->religion == 'budha';
-        })->count() / $countResident * 100;
-        $konghuchu = $religion->filter(function ($item) {
+        })->count() / $countResident * 100);
+        $konghuchu = round($religion->filter(function ($item) {
             return $item->religion == 'konghuchu';
-        })->count() / $countResident * 100;
-
+        })->count() / $countResident * 100);
 
 
         // pekerjaan
         $pekerjaan = MemberFamily::select('occupation')->get();
         $pekerjaanCounts = $pekerjaan->groupBy('occupation')->map(function ($item) use ($countResident) {
-            return $item->count() / $countResident * 100;
+            return round($item->count() / $countResident * 100);
         });
 
         $top10Pekerjaan = $pekerjaanCounts->sortDesc()->take(10);
@@ -84,7 +85,7 @@ class DemografiController extends Controller
         // pendidikan
         $pendidikan = MemberFamily::select('education_level')->get();
         $pendidikanCounts = $pendidikan->groupBy('education_level')->map(function ($item) use ($countResident) {
-            return $item->count() / $countResident * 100;
+            return round($item->count() / $countResident * 100);
         });
 
         $pendidikanCounts = $pendidikanCounts->map(function ($value, $key) {

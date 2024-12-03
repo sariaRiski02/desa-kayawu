@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Family;
 use App\Models\MemberFamily;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+
 
 class ResidentController extends Controller
 {
@@ -31,12 +31,53 @@ class ResidentController extends Controller
             'lingkungan 7',
             'lingkungan 8'
         ];
-        return view('addResident', compact('kk', 'lingkungan'));
+        $pendidikan = [
+            'Tidak/Belum Sekolah',
+            'Tidak Tamat SD',
+            'TK',
+            'SD',
+            'SMP/Sederajat',
+            'SMA/Sederajat',
+            'D1/D2',
+            'D3',
+            'S1/D4',
+            'S2',
+        ];
+
+        $status = [
+            'Belum Menikah',
+            'Sudah Menikah',
+            'Bercerai',
+        ];
+
+        $family_position = [
+            'Kepala Keluarga',
+            'Ibu Rumah Tangga',
+            'Anak'
+        ];
+        return view('addResident', compact('kk', 'lingkungan', 'pendidikan', 'status', 'family_position'));
     }
 
     public function indexUpdate($nik)
     {
-        return view('updateResident');
+
+
+        $resident = MemberFamily::where('nik', $nik)->first();
+
+
+        $kk = Family::all();
+        $lingkungan = [
+            'lingkungan 1',
+            'lingkungan 2',
+            'lingkungan 3',
+            'lingkungan 4',
+            'lingkungan 5',
+            'lingkungan 6',
+            'lingkungan 7',
+            'lingkungan 8'
+        ];
+
+        return view('updateResident', compact('kk', 'lingkungan', 'resident'));
     }
 
 
@@ -57,7 +98,6 @@ class ResidentController extends Controller
 
     public function addResident(Request $request)
     {
-
 
         $data = $request->validate([
             'nik' => 'required|numeric|digits:16|unique:member_families,nik',
@@ -115,4 +155,6 @@ class ResidentController extends Controller
         }
         return redirect()->route('dashboard.resident')->with('success', 'Resident berhasil ditambahkan');
     }
+
+    public function updateResident() {}
 }

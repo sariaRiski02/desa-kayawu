@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="social-media min-h-screen flex flex-col justify-center items-center bg-gray-100 p-8">
+    <div class="social-media min-h-screen flex flex-col justify-center items-center bg-gray-100 px-8">
         <h2 class="text-4xl font-bold mb-8">Kontak Kami</h2>
         <p class="text-lg mb-8 text-center">Hubungi kami melalui media sosial berikut untuk informasi lebih lanjut dan update terbaru.</p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl">

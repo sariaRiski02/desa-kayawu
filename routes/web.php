@@ -36,7 +36,12 @@ Route::prefix('dashboard')->group(function () {
 
 
     Route::get('/penduduk', [ResidentController::class, 'index'])->name('dashboard.resident');
-    Route::get('/penduduk/add', [ResidentController::class, 'indexAdd'])->name('dashboard.resident.add');
-    route::post('/penduduk/add', [ResidentController::class, 'addResident'])->name('dashboard.resident.addResident');
     Route::post('/penduduk/add/kk', [ResidentController::class, 'addKK'])->name('dashboard.resident.addKK');
+
+    Route::get('/penduduk/add', [ResidentController::class, 'indexAdd'])->name('dashboard.resident.add');
+    Route::post('/penduduk/add', [ResidentController::class, 'addResident'])->name('dashboard.resident.addResident');
+
+    Route::get('/penduduk/update/{nik}', [ResidentController::class, 'indexUpdate'])->name('dashborad.resident.update');
+    Route::put('/penduduk/update/{nik}', [ResidentController::class, 'updateResident'])->name('dashboard.resident.update');
+    Route::delete('/penduduk/delete/{nik}', [ResidentController::class, 'deleteResident'])->name('dashboard.resident.delete');
 });
