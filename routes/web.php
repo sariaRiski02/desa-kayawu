@@ -15,7 +15,7 @@ Route::view('/tentang', 'about')->name('about');
 Route::view('/pemerintahan', 'gov')->name('gov');
 Route::view('/kontak', 'contact')->name('contact');
 
-Route::get('/demografi', [DemografiController::class, 'index'])->name('demo');
+Route::view('/demografi', 'demografi')->name('demo');
 Route::get('/berita', [NewsController::class, 'index'])->name('news');
 Route::view('/login', 'login')->name('login');
 Route::post('/login', [UserController::class, 'login'])->name('login');
