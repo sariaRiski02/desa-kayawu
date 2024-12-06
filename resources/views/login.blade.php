@@ -8,6 +8,11 @@
     <div class="card w-full max-w-sm shadow-xl bg-base-100">
         <div class="card-body">
             <h2 class="text-center text-2xl font-bold">Login</h2>
+            @if(session('error'))
+            
+            <span class="text-red-500 text-center text-sm mt-1">{{ session('error') }}</span>
+            
+            @endif
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="form-control">
@@ -33,6 +38,9 @@
                         <span class="label-text">Show Password</span>
                         <input type="checkbox" class="checkbox checkbox-primary" onclick="togglePassword()" />
                     </label>
+                </div>
+                <div class="form-control mt-4 text-center">
+                    <span>Belum terdaftar? <a href="{{ route('register') }}" class="text-primary">Daftar di sini</a></span>
                 </div>
                 <div class="form-control mt-4">
                     <button type="submit" class="btn btn-primary">Login</button>

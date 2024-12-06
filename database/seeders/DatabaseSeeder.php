@@ -20,8 +20,6 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call([
-            FamilySeeder::class,
-            MemberFamilySeeder::class,
             CategorySeeder::class,
             PostSeeder::class
         ]);

@@ -244,93 +244,109 @@
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">PELAJAR/MAHASISWA</span>
-                        <span class="font-semibold">3000</span>
+                        <span class="font-semibold">634</span>
                     </div>
-                    <progress class="progress progress-primary w-full" value="3000" max="5000"></progress>
+                    <progress class="progress progress-primary w-full" value="634" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 2 - BELUM/TIDAK BEKERJA -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">BELUM/TIDAK BEKERJA</span>
-                        <span class="font-semibold">2500</span>
+                        <span class="font-semibold">1025</span>
                     </div>
-                    <progress class="progress progress-secondary w-full" value="2500" max="5000"></progress>
+                    <progress class="progress progress-secondary w-full" value="1025" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 3 - PETANI/PEKEBUN -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">PETANI/PEKEBUN</span>
-                        <span class="font-semibold">1500</span>
+                        <span class="font-semibold">438</span>
                     </div>
-                    <progress class="progress progress-accent w-full" value="1500" max="5000"></progress>
+                    <progress class="progress progress-accent w-full" value="438" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 4 - KARYAWAN SWASTA -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">KARYAWAN SWASTA</span>
-                        <span class="font-semibold">1800</span>
+                        <span class="font-semibold">248</span>
                     </div>
-                    <progress class="progress progress-success w-full" value="1800" max="5000"></progress>
+                    <progress class="progress progress-success w-full" value="248" max="1000"></progress>
                 </div>
         
+                <!-- Pekerjaan 8 - Guru -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold">Guru</span>
+                        <span class="font-semibold">32</span>
+                    </div>
+                    <progress class="progress progress-info w-full" value="32" max="1000"></progress>
+                </div>
+
                 <!-- Pekerjaan 5 - SOPIR -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">SOPIR</span>
-                        <span class="font-semibold">1000</span>
+                        <span class="font-semibold">35</span>
                     </div>
-                    <progress class="progress progress-warning w-full" value="1000" max="5000"></progress>
+                    <progress class="progress progress-warning w-full" value="35" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 6 - WIRASWASTA -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">WIRASWASTA</span>
-                        <span class="font-semibold">1200</span>
+                        <span class="font-semibold">72</span>
                     </div>
-                    <progress class="progress progress-info w-full" value="1200" max="5000"></progress>
+                    <progress class="progress progress-info w-full" value="72" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 7 - TUKANG KAYU -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">TUKANG KAYU</span>
-                        <span class="font-semibold">800</span>
+                        <span class="font-semibold">35</span>
                     </div>
-                    <progress class="progress progress-neutral w-full" value="800" max="5000"></progress>
+                    <progress class="progress progress-neutral w-full" value="35" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 8 - PENSIUNAN -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">PENSIUNAN</span>
-                        <span class="font-semibold">600</span>
+                        <span class="font-semibold">16</span>
                     </div>
-                    <progress class="progress progress-warning w-full" value="600" max="5000"></progress>
+                    <progress class="progress progress-warning w-full" value="16" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 9 - DOSEN -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">DOSEN</span>
-                        <span class="font-semibold">400</span>
+                        <span class="font-semibold">3</span>
                     </div>
-                    <progress class="progress progress-primary w-full" value="400" max="5000"></progress>
+                    <progress class="progress progress-primary w-full" value="3" max="1000"></progress>
                 </div>
         
                 <!-- Pekerjaan 10 - TUKANG BATU -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">TUKANG BATU</span>
-                        <span class="font-semibold">300</span>
+                        <span class="font-semibold">11</span>
                     </div>
-                    <progress class="progress progress-secondary w-full" value="300" max="5000"></progress>
+                    <progress class="progress progress-secondary w-full" value="11" max="1000"></progress>
                 </div>
         
-                <!-- Pekerjaan lainnya dapat ditambahkan dengan cara yang sama -->
+                <!-- Pekerjaan 2 - Pekerjaan Lainnya -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold">Pekerjaan Lainnya</span>
+                        <span class="font-semibold">33</span>
+                    </div>
+                    <progress class="progress progress-secondary w-full" value="33" max="1000"></progress>
+                </div>
             </div>
         </div>
 
@@ -342,7 +358,7 @@
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">TIDAK/BELUM SEKOLAH</span>
-                        <span class="font-semibold">500</span>
+                        <span class="font-semibold">224</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-4">
                         <div class="bg-primary h-4 rounded-full" style="width: 10%"></div>
@@ -353,10 +369,20 @@
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">TK</span>
-                        <span class="font-semibold">800</span>
+                        <span class="font-semibold">41 </span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-4">
                         <div class="bg-secondary h-4 rounded-full" style="width: 16%"></div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold">Tidak Tamat SD</span>
+                        <span class="font-semibold">73</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div class="bg-info h-4 rounded-full" style="width: 50%"></div>
                     </div>
                 </div>
         
@@ -364,7 +390,7 @@
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">SD</span>
-                        <span class="font-semibold">1200</span>
+                        <span class="font-semibold">587</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-4">
                         <div class="bg-accent h-4 rounded-full" style="width: 24%"></div>
@@ -374,8 +400,8 @@
                 <!-- SLTP/SEDERAJAT -->
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
-                        <span class="font-semibold">SLTP/SEDERAJAT</span>
-                        <span class="font-semibold">1000</span>
+                        <span class="font-semibold">SMP</span>
+                        <span class="font-semibold">475</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-4">
                         <div class="bg-success h-4 rounded-full" style="width: 20%"></div>
@@ -385,19 +411,41 @@
                 <!-- SLTA/SEDERAJAT -->
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
-                        <span class="font-semibold">SLTA/SEDERAJAT</span>
-                        <span class="font-semibold">2500</span>
+                        <span class="font-semibold">SMA</span>
+                        <span class="font-semibold">915</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-4">
                         <div class="bg-info h-4 rounded-full" style="width: 50%"></div>
                     </div>
                 </div>
+                {{-- Diploma 1/2 --}}
+                <div class="mb-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold">D1/D2</span>
+                        <span class="font-semibold">16</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div class="bg-neutral h-4 rounded-full" style="width: 16%"></div>
+                    </div>
+                </div>
         
+
+                {{-- Diploma 3 --}}
+                <div class="mb-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold">D3</span>
+                        <span class="font-semibold">57</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div class="bg-accent h-4 rounded-full" style="width: 24%"></div>
+                    </div>
+                </div>
+
                 <!-- S1 -->
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">S1</span>
-                        <span class="font-semibold">2000</span>
+                        <span class="font-semibold">2</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-4">
                         <div class="bg-warning h-4 rounded-full" style="width: 40%"></div>
@@ -408,7 +456,7 @@
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
                         <span class="font-semibold">S2</span>
-                        <span class="font-semibold">800</span>
+                        <span class="font-semibold">8</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-4">
                         <div class="bg-neutral h-4 rounded-full" style="width: 16%"></div>

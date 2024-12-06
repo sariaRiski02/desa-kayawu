@@ -16,8 +16,15 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
+        $category = [
+            'sosial',
+            'politik',
+            'edukasi',
+            'teknologi',
+            'ekonomi'
+        ];
         return [
-            "name" => $this->faker->word,
+            "name" => $this->faker->randomElement($category)
         ];
     }
 }

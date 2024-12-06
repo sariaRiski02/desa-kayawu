@@ -16,7 +16,7 @@
         <!-- About Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-                <img src="https://via.placeholder.com/600x400" alt="Kelurahan" class="rounded-lg shadow-lg">
+                <img src="{{ asset('storage/img/kayawu-lanscape.jpg') }}" alt="Kelurahan" class="rounded-lg shadow-lg">
             </div>
             <div>
                 <h2 class="text-2xl font-semibold text-gray-800">Sejarah Kelurahan</h2>

@@ -54,11 +54,11 @@
         <div class="mt-12">
             <h2 class="text-3xl font-bold text-gray-800 mb-6">Profil Lurah</h2>
             <div class="flex flex-col md:flex-row items-center gap-8">
-                <img src="https://via.placeholder.com/200x200" alt="Foto Lurah" class="rounded-full shadow-lg">
+                <img src="{{ asset('storage/images/lurah-kayawu.jpg') }}" alt="Foto Lurah" class="rounded-full shadow-lg w-40">
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Nama Lurah</h3>
+                    <h3 class="text-xl font-semibold text-gray-800">Ferry E. M. M. Pojoh, S.Pd</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Bapak/Ibu [Nama Lurah] telah menjabat sebagai Lurah sejak tahun xxxx. Dengan dedikasi tinggi, beliau memimpin pemerintahan kelurahan untuk memberikan pelayanan terbaik dan mewujudkan visi kelurahan yang maju dan sejahtera.
+                        Bapak <span class="font-bold">Ferry E. M. M. Pojoh, S,Pd</span> telah menjabat sebagai Lurah sejak tahun 2020. Dengan dedikasi tinggi, beliau memimpin pemerintahan kelurahan untuk memberikan pelayanan terbaik dan mewujudkan visi kelurahan yang maju dan sejahtera.
                     </p>
                 </div>
             </div>

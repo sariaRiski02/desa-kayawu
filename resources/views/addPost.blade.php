@@ -19,6 +19,7 @@
         <div class="mt-8 py-5 px-5">
             <h2 class="text-xl font-bold mb-4">Tambahkan Berita Baru</h2>
             <form action="{{ route('berita.add') }}" method="POST" enctype="multipart/form-data">
+                
             @csrf
             <div class="mb-4">
                 <label for="title" class="block text-sm font-medium text-gray-700">Judul</label>

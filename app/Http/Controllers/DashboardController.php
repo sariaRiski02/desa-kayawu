@@ -80,13 +80,10 @@ class DashboardController extends Controller
 
     public function update(Request $request, $slug)
     {
-
         $post = Post::where('slug', $slug)->first();
-
         if (!$post) {
             return redirect()->route('berita');
         }
-
         $data = $request->validate([
             'title' => 'nullable|string',
             'category' => 'nullable|string',
@@ -112,9 +109,10 @@ class DashboardController extends Controller
             return !is_null($value) && $value !== '';
         });
 
-        $post->update($data);
+        $updateData = $post->update($data);
 
-        if ($post) {
+
+        if ($updateData) {
             return redirect()->route('berita')->with('success', 'Berhasil diupdate.');
         } else {
             return redirect()->route('berita')->with('error', 'Gagal memperbarui postingan.');

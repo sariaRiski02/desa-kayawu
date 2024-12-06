@@ -10,7 +10,7 @@
             @foreach ($news as $item)
                 <div class="card bg-base-100 shadow-xl">
 
-                    @if (empty($item->image))
+                    @if (!empty($item->image))
                         <figure><img src="{{ asset('/storage/'.$item->image) }}" alt="" class="w-full h-48 object-cover"></figure>
                     @else
                     <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
