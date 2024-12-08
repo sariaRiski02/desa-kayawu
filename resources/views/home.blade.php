@@ -33,27 +33,26 @@
             <h2 class="text-3xl font-bold text-center mb-8">Potensi</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="card bg-base-100 shadow-xl">
-                    <figure><img src="{{ asset('storage/img/pertanian.jpg') }}" alt="Pertanian" /></figure>
+                    <figure class="h-48 overflow-hidden"><img src="{{ asset('storage/img/pertanian-kayawu.jpg') }}" alt="Pertanian" class="w-full h-full object-cover" /></figure>
                     <div class="card-body">
                         <h2 class="card-title">Pertanian</h2>
                         <p>kelurahan kami memiliki lahan pertanian yang subur</p>
                     </div>
                 </div>
                 <div class="card bg-base-100 shadow-xl">
-                    <figure><img  src="{{ asset('storage/img/pertanian.jpg') }}" alt="Peternakan" /></figure>
+                    <figure class="h-48 overflow-hidden"><img src="{{ asset('storage/img/pertanian.jpg') }}" alt="Peternakan" class="w-full h-full object-cover" /></figure>
                     <div class="card-body">
                         <h2 class="card-title">Peternakan</h2>
                         <p>Pengembangan peternakan yang modern</p>
                     </div>
                 </div>
                 <div class="card bg-base-100 shadow-xl">
-                    <figure><img src="{{ asset('storage/img/pertanian.jpg') }}" alt="Pariwisata" /></figure>
+                    <figure class="h-48 overflow-hidden"><img src="{{ asset('storage/img/goa-kayawu.jpg') }}" alt="Pariwisata" class="w-full h-full object-cover" /></figure>
                     <div class="card-body">
                         <h2 class="card-title">Pariwisata</h2>
                         <p>Destinasi wisata yang menarik</p>
                     </div>
                 </div>
-                
             </div>
             <div class="flex justify-center mt-8">
                 <a href="{{ route('potention') }}" class="btn btn-primary">Lihat Selengkapnya</a>
@@ -100,7 +99,7 @@
                     <img src="{{ asset('storage/images/lurah-kayawu.jpg') }}" alt="Kepala kelurahan" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
-                    <h2 class="card-title">Kepala kelurahan</h2>
+                    <h2 class="card-title">Kepala Kelurahan</h2>
                     <p>Ferry E. M. M. Pojoh S.Pd</p>
                 </div>
             </div>
@@ -109,7 +108,7 @@
                     <img src="{{ asset('storage/images/sekretaris.jpg') }}" alt="Sekretaris kelurahan" class="rounded-xl" />
                 </figure>
                 <div class="card-body items-center text-center">
-                    <h2 class="card-title">Sekretaris kelurahan</h2>
+                    <h2 class="card-title">Sekretaris Kelurahan</h2>
                     <p>Anita. E. Lolong, S.AP</p>
                 </div>
             </div>

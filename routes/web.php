@@ -20,6 +20,9 @@ Route::view('/demografi', 'demografi')->name('demo');
 Route::view('/potensi', 'potention')->name('potention');
 Route::get('/berita', [NewsController::class, 'index'])->name('news');
 
+Route::get('/berita/search', [NewsController::class, 'search'])->name('news.search');
+Route::get('/berita/kategori/{category}', [NewsController::class, 'category'])->name('news.category');
+
 
 Route::middleware([notAuthMiddleware::class])->group(function () {
     Route::get('/register', function () {

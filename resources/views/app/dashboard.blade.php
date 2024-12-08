@@ -19,8 +19,8 @@
       <ul class="menu bg-base-200 w-full">
         <li><a class="@if (Route::is('berita'))
             active
-        @endif" href="{{ route('berita') }}">Posts</a></li>
-        <li><a href="{{ route('logout') }}">Logout</a></li>
+        @endif" href="{{ route('berita') }}">Berita</a></li>
+        <li><a href="{{ route('logout') }}">Keluar</a></li>
       </ul>
     </div>
 

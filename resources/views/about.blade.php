@@ -58,9 +58,9 @@
         <div class="mt-12">
             <h2 class="text-3xl font-bold text-center text-primary mb-6">Hubungi Kami</h2>
             <div class="text-center text-gray-600">
-                <p>Alamat: Jl. Contoh Raya No. 123, Kelurahan Contoh, Kota Contoh</p>
-                <p>Email: info@kelurahancontoh.go.id</p>
-                <p>Telepon: +62 812-3456-7890</p>
+                <p>Alamat: Tomohon utara, Kelurahan Kayawu</p>
+                <p>Email: kelurahankayawu2@gmail.com</p>
+                
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@ class UserController extends Controller
 
         if ($user && Hash::check($data['password'], $user->password)) {
             Auth::login($user);
-            return redirect()->route('home');
+            return redirect()->route('berita');
         } else {
             return redirect()->back()->with('error', 'Email atau password salah.');
         }

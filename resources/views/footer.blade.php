@@ -9,16 +9,16 @@
             </div> 
             <div>
                 <span class="footer-title">Kontak</span> 
-                <a class="link link-hover">Telepon: [Nomor Telepon]</a>
-                <a class="link link-hover">Email: [Email kelurahan]</a>
-                <a class="link link-hover">Alamat: [Alamat Lengkap]</a>
+                
+                <a href="mailto:kelurahankayawu2@gmail.com" class="link link-hover">Email: kelurahankayawu2@gmail.com</a>
+                <a class="link link-hover">Alamat: Kelurahan Kayawu, Tomohon utara</a>
             </div> 
             <div>
                 <span class="footer-title">Media Sosial</span> 
                 <div class="grid grid-flow-col gap-4">
-                    <a><i class="fab fa-facebook text-2xl"></i></a>
-                    <a><i class="fab fa-twitter text-2xl"></i></a>
-                    <a><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://web.facebook.com/kayawuOnline"><i class="fab fa-facebook text-2xl"></i></a>
+                    <a href="https://x.com/KelurahanKayawu"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="https://www.instagram.com/kelurahankayawu/"><i class="fab fa-instagram text-2xl"></i></a>
                 </div>
             </div> 
         </div>
@@ -28,7 +28,7 @@
     <footer class="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
 
-            <p>© 2024 Kelurahan Kayawu - created by <a href="https://mrizkysaria.netlify.app">Rizky saria</a></p>
+            <p>© 2024 Kelurahan Kayawu - created by <a href="">KKT-141 Unsrat</a></p>
             
         </div>
     </footer>

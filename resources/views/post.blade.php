@@ -11,7 +11,7 @@
       <a class="btn btn-ghost normal-case text-xl">Dashboard</a>
     </div>
     <div class="flex-none">
-        <a href="{{ route('home') }}" class="btn btn-secondary">site</a>
+        <a href="{{ route('home') }}" class="btn btn-secondary">Beranda</a>
     </div>
      </div>
   
